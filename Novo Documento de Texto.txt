@@ -1,0 +1,22 @@
+<?php 
+error_reporting (E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
+$host="localhost";
+   $user="u734506267_cserv";
+    $pass="AF8Id34IScQp";
+      $banco="u734506267_cli";
+        $conexao=mysql_connect($host,$user,$pass) or die(mysql_error());
+                 mysql_select_db($banco) or die (mysql_error());
+	
+session_start();
+	if(!isset($_SESSION["nome"]))
+		{
+			header("Location:login.php");
+			exit;
+
+		} else {
+			
+		}
+ ?>
+
+<li><a><?php echo "bem vindo = ".$_SESSION['nome'];?></a></li>
+<li><a href="logout.php">Sair</a></li>
